@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .header {
+        @apply text-lg font-semibold leading-[1.625rem] text-[#26282c]
+    }
+}
