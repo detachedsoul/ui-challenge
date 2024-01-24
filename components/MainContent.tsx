@@ -7,6 +7,7 @@ import JaydonVaccaro from "@/assets/img/jaydon-vaccaro.svg";
 import CoreySchleifer from "@/assets/img/corey-schleifer.svg";
 import CooperPress from "@/assets/img/cooper-press.svg";
 import PhillipLubin from "@/assets/img/phillip-lubin.svg";
+import { useState, useId } from "react";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -17,10 +18,10 @@ import {
     Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { ChevronDownIcon } from "lucide-react";
+import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 
 type ordersType = {
-    id: number,
+    id: string,
     customerImage: string,
     customerName: string,
     date: string,
@@ -28,7 +29,7 @@ type ordersType = {
     status: number
 };
 
-const generateRandomData = (numPoints, min, max) => {
+const generateRandomData = (numPoints: number, min: number, max: number) => {
     const data = [];
     for (let i = 0; i < numPoints; i++) {
         data.push(Math.floor(Math.random() * (max - min + 1)) + min);
@@ -37,9 +38,12 @@ const generateRandomData = (numPoints, min, max) => {
 };
 
 const MainContent = (): JSX.Element => {
+    const [trendsFilterIsActive, setTrendsFilterIsActive] = useState<boolean>(false);
+    const [selectedTrend, setSelectedTrend] = useState<string>("Weekly");
+
     const orders: ordersType[] = [
         {
-            id: 1,
+            id: useId(),
             customerImage: MarcusBergson,
             customerName: "Marcus Bergson",
             date: "Nov 15, 2023",
@@ -47,7 +51,7 @@ const MainContent = (): JSX.Element => {
             status: 1
         },
         {
-            id: 2,
+            id: useId(),
             customerImage: JaydonVaccaro,
             customerName: "Jaydon Vaccaro",
             date: "Nov 15, 2023",
@@ -55,7 +59,7 @@ const MainContent = (): JSX.Element => {
             status: 0
         },
         {
-            id: 3,
+            id: useId(),
             customerImage: CoreySchleifer,
             customerName: "Corey Schleifer",
             date: "Nov 14, 2023",
@@ -63,7 +67,7 @@ const MainContent = (): JSX.Element => {
             status: 1
         },
         {
-            id: 4,
+            id: useId(),
             customerImage: CooperPress,
             customerName: "Cooper Press",
             date: "Nov 14, 2023",
@@ -71,7 +75,7 @@ const MainContent = (): JSX.Element => {
             status: 0
         },
         {
-            id: 3,
+            id: useId(),
             customerImage: PhillipLubin,
             customerName: "Phillip Lubin",
             date: "Nov 13, 2023",
@@ -96,7 +100,7 @@ const MainContent = (): JSX.Element => {
                 backgroundColor: 'rgba(52, 202, 165, 0.10)',
                 borderRadius: 20,
                 hoverBackgroundColor: "rgba(52, 202, 165, 0.50)",
-                data: generateRandomData(12, 1, 100),
+                data: generateRandomData(12, 100, 50000),
             },
         ],
     };
@@ -111,10 +115,15 @@ const MainContent = (): JSX.Element => {
             y: {
                 beginAtZero: true,
             },
+            x: {
+                beginAtZero: true,
+                maxRotation: 0,
+            },
         },
     };
 
     return (
+
         <div className="grid gap-4 lg:col-span-7">
             <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[1.06rem]">
                 <div className="flex items-center justify-between gap-4">
@@ -127,11 +136,42 @@ const MainContent = (): JSX.Element => {
                             Sort by:
                         </p>
 
-                        <button className="py-[0.375rem] px-3 rounded-[1.25rem] bg-white border border-[#e1dfdf] flex items-center gap-[0.625rem] text-xs leading-4 text-[#3a3f51] transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa]" type="button">
-                            Weekly
+                        <button className={`py-[0.375rem] px-3 rounded-[1.25rem] border border-[#e1dfdf] flex items-center gap-[0.625rem] text-xs leading-4 text-[#3a3f51] transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa] ${trendsFilterIsActive ? 'bg-[#f7f8fa]' : 'bg-white'}`} type="button" onClick={() => setTrendsFilterIsActive(!trendsFilterIsActive)}>
+                            {selectedTrend}
 
-                            <ChevronDownIcon className="text-black" strokeWidth={1} />
+                            {trendsFilterIsActive ? (
+                                <ChevronUpIcon className="text-black" strokeWidth={1} />
+                            ) : (
+                                <ChevronDownIcon className="text-black" strokeWidth={1} />
+                            )}
+
                         </button>
+
+                        <div className={`bg-white rounded-[0.875rem] border border-[#edf2f7] absolute top-[calc(100%+1rem)] text-xs leading-4 text-[#3a3f51] w-full transition-all duration-500 ease-in-out ${trendsFilterIsActive ? "animate-fadeIn" : "animate-fadeOut"}`}>
+                            <button className="transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa] p-4 text-left rounded-t-[0.875rem] w-full" type="button" onClick={() => setSelectedTrend(() => {
+                                setTrendsFilterIsActive(false);
+
+                                return "Weekly";
+                            })}>
+                                Weekly
+                            </button>
+
+                            <button className="transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa] p-4 text-left w-full" type="button" onClick={() => setSelectedTrend(() => {
+                                setTrendsFilterIsActive(false);
+
+                                return "Monthly";
+                            })}>
+                                Monthly
+                            </button>
+
+                            <button className="transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa] p-4 text-left rounded-b-[0.875rem] w-full" type="button" onClick={() => setSelectedTrend(() => {
+                                setTrendsFilterIsActive(false);
+
+                                return "Yearly";
+                            })}>
+                                Yearly
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -149,7 +189,7 @@ const MainContent = (): JSX.Element => {
                     </Link>
                 </div>
 
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto custom-scrollbar">
                     <table className="w-full border-collapse whitespace-nowrap table-auto">
                         <thead className="text-left border-b border-gray-300">
                             <tr>
@@ -177,7 +217,7 @@ const MainContent = (): JSX.Element => {
 
                         <tbody>
                             {orders.map((order: ordersType): JSX.Element => (
-                                <tr className="first:pt-4 border-b border-gray-300" key={order.id}>
+                                <tr className="first:pt-4 border-b border-[#edf2f6] last:border-b-0" key={order.id}>
                                     <td className="py-4 pr-4 inline-flex gap-[0.625rem] items-center leading-6 font-medium text-[#3a3f51] w-max">
                                         <Image src={order.customerImage} alt={order.customerName} />
 

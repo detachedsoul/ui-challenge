@@ -8,11 +8,33 @@ const config: Config = {
     ],
     theme: {
         extend: {
-            colors: {
-                "brand-dark-purple": "#2a2c60",
-                "brand-light-purple": "#202b3c",
-                "brand-light-blue": "#67B3e4",
-            }
+            keyframes: {
+                "fadeIn": {
+                    from: {
+                        "opacity": "0",
+                        "display": "none",
+                    },
+                    to: {
+                        "opacity": "1",
+                        "display": "grid",
+                    },
+                },
+
+                "fadeOut": {
+                    from: {
+                        "opacity": "1",
+                        "display": "grid",
+                    },
+                    to: {
+                        "opacity": "0",
+                        "display": "none",
+                    },
+                },
+            },
+            animation: {
+                "fadeIn": "fadeIn .25s linear forwards",
+                "fadeOut": "fadeOut .25s linear forwards",
+            },
         },
     },
     plugins: [],

@@ -1,15 +1,63 @@
+"use client";
+
+import MobileNavBar from "@/components/MobileNavBar";
+import MobileSearchBar from "@/components/MobileSearchBar";
+import MobileUserPreview from "@/components/MobileUserPreview";
+import Link from "next/link";
 import Image from "next/image";
 import UserImage from "@/assets/img/user-icon.svg";
-import { ChevronDownIcon } from "lucide-react";
+import { useState } from "react";
+import { ChevronDownIcon, MenuIcon, XIcon, UserIcon, SearchIcon } from "lucide-react";
 
 const Header = (): JSX.Element => {
+    const [navBarIsActive, setNavBarIsActive] = useState<boolean>(false);
+    const [searchBarIsActive, setSearchBarIsActive] = useState<boolean>(false);
+    const [userPreviewIsActive, setPreviewIsActive] = useState<boolean>(false);
+
     return (
         <header className="bg-[#fafafa] border-b border-[#e5eaef] p-[1.125rem] flex items-center gap-4 justify-between sticky top-0 z-50">
             <p className="text-xl font-semibold leading-7 text-[#26282c]">
                 Dashboard
             </p>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 lg:hidden">
+                <button type="button" aria-label="Toggle searchbar" onClick={() => setSearchBarIsActive(() => {
+                    setPreviewIsActive(false);
+                    setNavBarIsActive(false);
+
+                    return !searchBarIsActive;
+                })}>
+                    <SearchIcon />
+                </button>
+
+                <button type="button" aria-label="Toggle user preview" onClick={() => setPreviewIsActive(() => {
+                    setNavBarIsActive(false);
+                    setSearchBarIsActive(false);
+
+                    return !userPreviewIsActive;
+                })}>
+                    <UserIcon />
+                </button>
+
+                <button type="button" aria-label="Toggle navbar" onClick={() => setNavBarIsActive(() => {
+                    setPreviewIsActive(false);
+                    setSearchBarIsActive(false);
+
+                    return !navBarIsActive;
+                })}>
+                    {navBarIsActive ? (
+                        <XIcon />
+                    ) : (
+                        <MenuIcon />
+                    )}
+                </button>
+            </div>
+
+            <MobileNavBar isActive={navBarIsActive} />
+            <MobileSearchBar isActive={searchBarIsActive} />
+            <MobileUserPreview isActive={userPreviewIsActive} />
+
+            <div className="hidden items-center gap-6 lg:flex">
                 <form className="flex items-center bg-white border border-[#dadddd] px-4 py-3 gap-2 rounded-3xl" method="get">
                     <button type="submit" aria-label="Search">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">

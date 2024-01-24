@@ -16,7 +16,7 @@ const jakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
     title: "Analytics Dashboard",
-    description: "GeeqPay UI Challenge",
+    description: "GeegPay UI Challenge",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <link rel="icon" href="/favicon.svg" />
+                <link rel="icon" href="/favicon.jpg" />
             </head>
 
             <body className={`${jakartaSans.className} text-base leading-[160%] antialiased text-balance scroll-smooth flex items-start`}>
