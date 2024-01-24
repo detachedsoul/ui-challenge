@@ -16,37 +16,37 @@ const ContentAside = (): JSX.Element => {
             type: "Book Bazaar",
             amount: "$2,500,000",
             percentage: "+15%",
-            color: "bg-[#6160dc]",
-            width: "w-[1/2]"
+            color: "after:bg-[#6160dc]",
+            width: "after:w-1/2"
         },
         {
             id: 2,
             type: "Artisan Aisle",
             amount: "$1,800,000",
             percentage: "+10%",
-            color: "bg-[#54c5eb]",
-            width: "w-[1/4]"
+            color: "after:bg-[#54c5eb]",
+            width: "after:w-2/5"
         },
         {
             id: 3,
             type: "Toy Troop",
             amount: "$1,200,000",
             percentage: "+8%",
-            color: "bg-[#ffb74a]",
-            width: "w-[1/5]"
+            color: "after:bg-[#ffb74a]",
+            width: "after:w-1/3"
         },
         {
             id: 4,
             type: "XStore",
             amount: "$1,200,000",
             percentage: "+8%",
-            color: "bg-[#ff4a55]",
-            width: "w-[1/5]"
+            color: "after:bg-[#ff4a55]",
+            width: "after:w-1/4"
         },
     ];
 
     return (
-        <div className="grid gap-4 sticky top-0 lg:col-span-5">
+        <div className="grid gap-4 lg:col-span-5">
             <div className="grid lg:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[0.625rem]">
                     <div className="flex items-center justify-between">
@@ -253,7 +253,7 @@ const ContentAside = (): JSX.Element => {
                                 {platform.type}
                             </h3>
 
-                            <div className={`relative rounded-[2.5rem] bg-[#f5f5f5] h-3 after:absolute after:rounded-[2.5rem] after:${platform.color} after:left-0 after:h-3 after:${platform.width}`}></div>
+                            <div className={`relative rounded-[2.5rem] bg-[#f5f5f5] h-3 after:absolute after:rounded-[2.5rem] ${platform.color} after:left-0 after:h-3 ${platform.width}`}></div>
 
                             <div className="flex items-center gap-4 justify-between">
                                 <p className="text-[#525252] text-lg leading-[1.625rem]">

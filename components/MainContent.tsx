@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import MarcusBergson from "@/assets/img/marcus-bergson.svg";
@@ -5,6 +7,17 @@ import JaydonVaccaro from "@/assets/img/jaydon-vaccaro.svg";
 import CoreySchleifer from "@/assets/img/corey-schleifer.svg";
 import CooperPress from "@/assets/img/cooper-press.svg";
 import PhillipLubin from "@/assets/img/phillip-lubin.svg";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+import { ChevronDownIcon } from "lucide-react";
 
 type ordersType = {
     id: number,
@@ -13,6 +26,14 @@ type ordersType = {
     date: string,
     amount: string,
     status: number
+};
+
+const generateRandomData = (numPoints, min, max) => {
+    const data = [];
+    for (let i = 0; i < numPoints; i++) {
+        data.push(Math.floor(Math.random() * (max - min + 1)) + min);
+    }
+    return data;
 };
 
 const MainContent = (): JSX.Element => {
@@ -59,10 +80,62 @@ const MainContent = (): JSX.Element => {
         },
     ];
 
+    ChartJS.register(
+        CategoryScale,
+        LinearScale,
+        BarElement,
+        Title,
+        Tooltip,
+        Legend
+    );
+
+    const data = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [
+            {
+                backgroundColor: 'rgba(52, 202, 165, 0.10)',
+                borderRadius: 20,
+                hoverBackgroundColor: "rgba(52, 202, 165, 0.50)",
+                data: generateRandomData(12, 1, 100),
+            },
+        ],
+    };
+
+    const options = {
+        plugins: {
+            legend: {
+                display: false,
+            },
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+            },
+        },
+    };
+
     return (
         <div className="grid gap-4 lg:col-span-7">
-            <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[0.625rem]">
+            <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[1.06rem]">
+                <div className="flex items-center justify-between gap-4">
+                    <h2 className="header">
+                        Sales Trends
+                    </h2>
 
+                    <div className="flex items-center gap-[0.625rem] relative">
+                        <p className="text-[#3a3f51] font-medium text-sm leading-[1.375rem]">
+                            Sort by:
+                        </p>
+
+                        <button className="py-[0.375rem] px-3 rounded-[1.25rem] bg-white border border-[#e1dfdf] flex items-center gap-[0.625rem] text-xs leading-4 text-[#3a3f51] transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa]" type="button">
+                            Weekly
+
+                            <ChevronDownIcon className="text-black" strokeWidth={1} />
+                        </button>
+                    </div>
+                </div>
+
+                <Bar data={data} options={options} />
             </div>
 
             <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[1.06rem]">
@@ -77,7 +150,7 @@ const MainContent = (): JSX.Element => {
                 </div>
 
                 <div className="overflow-x-auto">
-                    <table className="w-full border-collapse whitespace-nowrap">
+                    <table className="w-full border-collapse whitespace-nowrap table-auto">
                         <thead className="text-left border-b border-gray-300">
                             <tr>
                                 <th className="text-[#9ca4ab] font-medium leading-6 pb-[1.06rem] pr-4 last:pr-0">
@@ -105,12 +178,10 @@ const MainContent = (): JSX.Element => {
                         <tbody>
                             {orders.map((order: ordersType): JSX.Element => (
                                 <tr className="first:pt-4 border-b border-gray-300" key={order.id}>
-                                    <td className="py-4 pr-4">
-                                        <div className="inline-flex gap-[0.625rem] items-center leading-6 font-medium text-[#3a3f51]">
-                                            <Image src={order.customerImage} alt={order.customerName} />
+                                    <td className="py-4 pr-4 inline-flex gap-[0.625rem] items-center leading-6 font-medium text-[#3a3f51] w-max">
+                                        <Image src={order.customerImage} alt={order.customerName} />
 
-                                            {order.customerName}
-                                        </div>
+                                        {order.customerName}
                                     </td>
 
                                     <td className="ml-[0.625rem] py-4 pr-4 text-[#737373]">
