@@ -25,6 +25,6 @@
     }
 
     .header {
-        @apply text-lg font-semibold leading-[1.625rem] text-[#26282c]
+        @apply text-lg font-semibold leading-[1.625rem] text-[#26282c] dark:text-white
     }
 }

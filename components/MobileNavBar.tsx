@@ -2,21 +2,21 @@ import Link from "next/link";
 
 const MobileNavBar = ({isActive}: {isActive: boolean}): JSX.Element => {
     return (
-        <nav className={`absolute bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[1.06rem] w-[calc(100%-2rem)] top-[calc(100%+1rem)] overflow-y-auto h-[calc(100vh-((1.125rem*2)+10rem))] bottom-4 custom-scrollbar transition-transform ease-in-out duration-300 ${isActive ? "translate-y-0" : "-translate-y-[200%]"} lg:hidden`}>
+        <nav className={`absolute bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[1.06rem] w-[calc(100%-2rem)] top-[calc(100%+1rem)] overflow-y-auto h-[calc(100vh-((1.125rem*2)+10rem))] bottom-4 custom-scrollbar transition-transform ease-in-out duration-300 ${isActive ? "translate-y-0" : "-translate-y-[300%]"} dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 lg:hidden`}>
             <ul className="grid gap-5">
                 <li>
                     <Link className="flex items-center gap-2 p-4 rounded-[0.875rem] hover:bg-[rgba(52,_202,_165,_0.10)] relative group" href="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M7.24 2H5.34C3.15 2 2 3.15 2 5.33V7.23C2 9.41 3.15 10.56 5.33 10.56H7.23C9.41 10.56 10.56 9.41 10.56 7.23V5.33C10.57 3.15 9.42 2 7.24 2Z" fill="#0D062D" />
-                            <path opacity="0.4" d="M18.6699 2H16.7699C14.5899 2 13.4399 3.15 13.4399 5.33V7.23C13.4399 9.41 14.5899 10.56 16.7699 10.56H18.6699C20.8499 10.56 21.9999 9.41 21.9999 7.23V5.33C21.9999 3.15 20.8499 2 18.6699 2Z" fill="#0D062D" />
-                            <path d="M18.6699 13.4301H16.7699C14.5899 13.4301 13.4399 14.5801 13.4399 16.7601V18.6601C13.4399 20.8401 14.5899 21.9901 16.7699 21.9901H18.6699C20.8499 21.9901 21.9999 20.8401 21.9999 18.6601V16.7601C21.9999 14.5801 20.8499 13.4301 18.6699 13.4301Z" fill="#0D062D" />
-                            <path opacity="0.4" d="M7.24 13.4301H5.34C3.15 13.4301 2 14.5801 2 16.7601V18.6601C2 20.8501 3.15 22.0001 5.33 22.0001H7.23C9.41 22.0001 10.56 20.8501 10.56 18.6701V16.7701C10.57 14.5801 9.42 13.4301 7.24 13.4301Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M7.24 2H5.34C3.15 2 2 3.15 2 5.33V7.23C2 9.41 3.15 10.56 5.33 10.56H7.23C9.41 10.56 10.56 9.41 10.56 7.23V5.33C10.57 3.15 9.42 2 7.24 2Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" opacity="0.4" d="M18.6699 2H16.7699C14.5899 2 13.4399 3.15 13.4399 5.33V7.23C13.4399 9.41 14.5899 10.56 16.7699 10.56H18.6699C20.8499 10.56 21.9999 9.41 21.9999 7.23V5.33C21.9999 3.15 20.8499 2 18.6699 2Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M18.6699 13.4301H16.7699C14.5899 13.4301 13.4399 14.5801 13.4399 16.7601V18.6601C13.4399 20.8401 14.5899 21.9901 16.7699 21.9901H18.6699C20.8499 21.9901 21.9999 20.8401 21.9999 18.6601V16.7601C21.9999 14.5801 20.8499 13.4301 18.6699 13.4301Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" opacity="0.4" d="M7.24 13.4301H5.34C3.15 13.4301 2 14.5801 2 16.7601V18.6601C2 20.8501 3.15 22.0001 5.33 22.0001H7.23C9.41 22.0001 10.56 20.8501 10.56 18.6701V16.7701C10.57 14.5801 9.42 13.4301 7.24 13.4301Z" fill="#0D062D" />
                         </svg>
 
                         Home
 
                         <svg className="absolute right-0 group-hover:h-0" xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
-                            <path d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
                         </svg>
                     </Link>
                 </li>

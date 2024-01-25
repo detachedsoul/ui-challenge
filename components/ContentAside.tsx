@@ -48,7 +48,7 @@ const ContentAside = (): JSX.Element => {
     return (
         <div className="grid gap-4 lg:col-span-5">
             <div className="grid lg:grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[0.625rem]">
+                <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[0.625rem] dark:bg-slate-800 dark:border-slate-900">
                     <div className="flex items-center justify-between">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="19.6429" stroke="#E6E6E6" strokeWidth="0.714286" />
@@ -70,11 +70,11 @@ const ContentAside = (): JSX.Element => {
                         </svg>
                     </div>
 
-                    <h3 className="text-[#898989] font-medium leading-[1.625rem] text-lg">
+                    <h3 className="text-[#898989] font-medium leading-[1.625rem] text-lg dark:text-slate-200">
                         Total Order
                     </h3>
 
-                    <p className="font-semibold text-[#3a3f51] text-2xl leading-8">
+                    <p className="font-semibold text-[#3a3f51] text-2xl leading-8 dark:text-white">
                         350
                     </p>
 
@@ -88,13 +88,13 @@ const ContentAside = (): JSX.Element => {
                             23,5%
                         </p>
 
-                        <p className="text-[#606060] text-sm">
+                        <p className="text-[#606060] text-sm dark:text-white">
                             vs. previous month
                         </p>
                     </div>
                 </div>
 
-                <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[0.625rem]">
+                <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[0.625rem] dark:bg-slate-800 dark:border-slate-900">
                     <div className="flex items-center justify-between">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="19.6429" stroke="#E6E6E6" strokeWidth="0.714286" />
@@ -116,11 +116,11 @@ const ContentAside = (): JSX.Element => {
                         </svg>
                     </div>
 
-                    <h3 className="text-[#898989] font-medium leading-[1.625rem] text-lg">
+                    <h3 className="text-[#898989] font-medium leading-[1.625rem] text-lg dark:text-slate-200">
                         Total Refund
                     </h3>
 
-                    <p className="font-semibold text-[#3a3f51] text-2xl leading-8">
+                    <p className="font-semibold text-[#3a3f51] text-2xl leading-8 dark:text-white">
                         270
                     </p>
 
@@ -135,13 +135,13 @@ const ContentAside = (): JSX.Element => {
                             23,5%
                         </p>
 
-                        <p className="text-[#606060] text-sm">
+                        <p className="text-[#606060] text-sm dark:text-white">
                             vs. previous month
                         </p>
                     </div>
                 </div>
 
-                <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[0.625rem]">
+                <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[0.625rem] dark:bg-slate-800 dark:border-slate-900">
                     <div className="flex items-center justify-between">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="19.6429" stroke="#E6E6E6" strokeWidth="0.714286" />
@@ -163,11 +163,11 @@ const ContentAside = (): JSX.Element => {
                         </svg>
                     </div>
 
-                    <h3 className="text-[#898989] font-medium leading-[1.625rem] text-lg">
+                    <h3 className="text-[#898989] font-medium leading-[1.625rem] text-lg dark:text-slate-200">
                         Average Sales
                     </h3>
 
-                    <p className="font-semibold text-[#3a3f51] text-2xl leading-8">
+                    <p className="font-semibold text-[#3a3f51] text-2xl leading-8 dark:text-white">
                         1567
                     </p>
 
@@ -182,13 +182,13 @@ const ContentAside = (): JSX.Element => {
                             23,5%
                         </p>
 
-                        <p className="text-[#606060] text-sm">
+                        <p className="text-[#606060] text-sm dark:text-white">
                             vs. previous month
                         </p>
                     </div>
                 </div>
 
-                <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[0.625rem]">
+                <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[0.625rem] dark:bg-slate-800 dark:border-slate-900">
                     <div className="flex items-center justify-between">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="19.6429" stroke="#E6E6E6" strokeWidth="0.714286" />
@@ -210,11 +210,11 @@ const ContentAside = (): JSX.Element => {
                         </svg>
                     </div>
 
-                    <h3 className="text-[#898989] font-medium leading-[1.625rem] text-lg">
+                    <h3 className="text-[#898989] font-medium leading-[1.625rem] text-lg dark:text-slate-200">
                         Total Income
                     </h3>
 
-                    <p className="font-semibold text-[#3a3f51] text-2xl leading-8">
+                    <p className="font-semibold text-[#3a3f51] text-2xl leading-8 dark:text-white">
                         $350.000
                     </p>
 
@@ -228,14 +228,14 @@ const ContentAside = (): JSX.Element => {
                             23,5%
                         </p>
 
-                        <p className="text-[#606060] text-sm">
+                        <p className="text-[#606060] text-sm dark:text-white">
                             vs. previous month
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div className="grid gap-5 p-4 bg-white rounded-lg">
+            <div className="grid gap-5 p-4 bg-white rounded-lg dark:bg-slate-800">
                 <div className="flex items-center justify-between gap-4">
                     <h2 className="header">
                         Top Platform
@@ -253,14 +253,14 @@ const ContentAside = (): JSX.Element => {
                                 {platform.type}
                             </h3>
 
-                            <div className={`relative rounded-[2.5rem] bg-[#f5f5f5] h-3 after:absolute after:rounded-[2.5rem] ${platform.color} after:left-0 after:h-3 ${platform.width}`}></div>
+                            <div className={`relative rounded-[2.5rem] bg-[#f5f5f5] h-3 after:absolute after:rounded-[2.5rem] ${platform.color} after:left-0 after:h-3 ${platform.width} dark:bg-slate-600`}></div>
 
                             <div className="flex items-center gap-4 justify-between">
-                                <p className="text-[#525252] text-lg leading-[1.625rem]">
+                                <p className="text-[#525252] text-lg leading-[1.625rem] dark:text-slate-400">
                                     {platform.amount}
                                 </p>
 
-                                <p className="text-[#525252] text-lg leading-[1.625rem]">
+                                <p className="text-[#525252] text-lg leading-[1.625rem] dark:text-slate-400">
                                     {platform.percentage}
                                 </p>
                             </div>

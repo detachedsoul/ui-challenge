@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import useTheme from "@/hooks/useTheme";
 
 const SideNavigation = (): JSX.Element => {
+    const { theme, toggleTheme } = useTheme();
+
     return (
-        <div className="hidden lg:block w-auto bg-[#f7f8fa] border-r border-[#ebecf2] h-screen overflow-y-auto sticky top-0 custom-scrollbar">
-            <div className="sticky top-0 px-10 pt-6 flex flex-col place-items-center bg-[#f7f8fa] z-50">
+        <div className="hidden lg:block w-auto bg-[#f7f8fa] border-r border-[#ebecf2] h-screen overflow-y-auto sticky top-0 custom-scrollbar dark:bg-slate-900 dark:border-r-slate-800 dark:text-slate-200">
+            <div className="sticky top-0 px-10 pt-6 flex flex-col place-items-center bg-[#f7f8fa] z-50 dark:bg-slate-900">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <path fillRule="evenodd" clipRule="evenodd" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95429 0 0 8.95431 0 20C0 31.0457 8.95429 40 20 40ZM26.2393 9.31684C26.543 8.23805 25.4961 7.60013 24.54 8.2813L11.1931 17.7896C10.1562 18.5283 10.3193 20 11.4381 20H14.9527V19.9728H21.8025L16.2212 21.9421L13.7607 30.6832C13.457 31.762 14.5038 32.3999 15.46 31.7187L28.8069 22.2105C29.8438 21.4718 29.6806 20 28.5619 20H23.2321L26.2393 9.31684Z" fill="#34CAA5" />
                 </svg>
@@ -11,22 +16,22 @@ const SideNavigation = (): JSX.Element => {
 
             <div className="flex flex-col justify-between gap-[10rem] py-5">
                 <div className="flex flex-col gap-5">
-                    <Link className="px-8 flex items-center relative group" href="">
+                    <Link className="px-8 flex items-center relative group" href="" aria-label="Dashboard link">
                         <div className="mx-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M7.24 2H5.34C3.15 2 2 3.15 2 5.33V7.23C2 9.41 3.15 10.56 5.33 10.56H7.23C9.41 10.56 10.56 9.41 10.56 7.23V5.33C10.57 3.15 9.42 2 7.24 2Z" fill="#0D062D" />
-                                <path opacity="0.4" d="M18.6699 2H16.7699C14.5899 2 13.4399 3.15 13.4399 5.33V7.23C13.4399 9.41 14.5899 10.56 16.7699 10.56H18.6699C20.8499 10.56 21.9999 9.41 21.9999 7.23V5.33C21.9999 3.15 20.8499 2 18.6699 2Z" fill="#0D062D" />
-                                <path d="M18.6699 13.4301H16.7699C14.5899 13.4301 13.4399 14.5801 13.4399 16.7601V18.6601C13.4399 20.8401 14.5899 21.9901 16.7699 21.9901H18.6699C20.8499 21.9901 21.9999 20.8401 21.9999 18.6601V16.7601C21.9999 14.5801 20.8499 13.4301 18.6699 13.4301Z" fill="#0D062D" />
-                                <path opacity="0.4" d="M7.24 13.4301H5.34C3.15 13.4301 2 14.5801 2 16.7601V18.6601C2 20.8501 3.15 22.0001 5.33 22.0001H7.23C9.41 22.0001 10.56 20.8501 10.56 18.6701V16.7701C10.57 14.5801 9.42 13.4301 7.24 13.4301Z" fill="#0D062D" />
+                                <path className="dark:fill-slate-200" d="M7.24 2H5.34C3.15 2 2 3.15 2 5.33V7.23C2 9.41 3.15 10.56 5.33 10.56H7.23C9.41 10.56 10.56 9.41 10.56 7.23V5.33C10.57 3.15 9.42 2 7.24 2Z" fill="#0D062D" />
+                                <path className="dark:fill-slate-200" opacity="0.4" d="M18.6699 2H16.7699C14.5899 2 13.4399 3.15 13.4399 5.33V7.23C13.4399 9.41 14.5899 10.56 16.7699 10.56H18.6699C20.8499 10.56 21.9999 9.41 21.9999 7.23V5.33C21.9999 3.15 20.8499 2 18.6699 2Z" fill="#0D062D" />
+                                <path className="dark:fill-slate-200" d="M18.6699 13.4301H16.7699C14.5899 13.4301 13.4399 14.5801 13.4399 16.7601V18.6601C13.4399 20.8401 14.5899 21.9901 16.7699 21.9901H18.6699C20.8499 21.9901 21.9999 20.8401 21.9999 18.6601V16.7601C21.9999 14.5801 20.8499 13.4301 18.6699 13.4301Z" fill="#0D062D" />
+                                <path className="dark:fill-slate-200" opacity="0.4" d="M7.24 13.4301H5.34C3.15 13.4301 2 14.5801 2 16.7601V18.6601C2 20.8501 3.15 22.0001 5.33 22.0001H7.23C9.41 22.0001 10.56 20.8501 10.56 18.6701V16.7701C10.57 14.5801 9.42 13.4301 7.24 13.4301Z" fill="#0D062D" />
                             </svg>
                         </div>
 
                         <svg className="absolute right-0" xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
-                            <path d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
                         </svg>
                     </Link>
 
-                    <Link className="px-8 flex items-center relative group" href="">
+                    <Link className="px-8 flex items-center relative group" href="" aria-label="Dashboard link">
                         <div className="mx-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M2 12.98V15C2 20 4 22 9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9" stroke="#B2ABAB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -37,11 +42,11 @@ const SideNavigation = (): JSX.Element => {
                         </div>
 
                         <svg className="absolute right-0 h-0 transition-all duration-300 ease-in-out group-hover:h-auto" xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
-                            <path d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
                         </svg>
                     </Link>
 
-                    <Link className="px-8 flex items-center relative group" href="">
+                    <Link className="px-8 flex items-center relative group" href="" aria-label="Dashboard link">
                         <div className="mx-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M12.6801 3.96C13.1601 4.67 13.4401 5.52 13.4401 6.44C13.4301 8.84 11.5401 10.79 9.16006 10.87C9.06006 10.86 8.94006 10.86 8.83006 10.87C6.45006 10.79 4.56006 8.84 4.56006 6.44C4.56006 3.99 6.54006 2 9.00006 2" stroke="#B2ABAB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -52,11 +57,11 @@ const SideNavigation = (): JSX.Element => {
                         </div>
 
                         <svg className="absolute right-0 h-0 transition-all duration-300 ease-in-out group-hover:h-auto" xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
-                            <path d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
                         </svg>
                     </Link>
 
-                    <Link className="px-8 flex items-center relative group" href="">
+                    <Link className="px-8 flex items-center relative group" href="" aria-label="Dashboard link">
                         <div className="mx-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M3.16992 7.44006L11.9999 12.55L20.7699 7.47003" stroke="#B7B0B0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -67,11 +72,11 @@ const SideNavigation = (): JSX.Element => {
                         </div>
 
                         <svg className="absolute right-0 h-0 transition-all duration-300 ease-in-out group-hover:h-auto" xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
-                            <path d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
                         </svg>
                     </Link>
 
-                    <Link className="px-8 flex items-center relative group" href="">
+                    <Link className="px-8 flex items-center relative group" href="" aria-label="Dashboard link">
                         <div className="mx-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M14.6599 20.01L13.1399 21.53C12.5199 22.15 11.4999 22.15 10.8799 21.53L9.3599 20.01C9.0999 19.75 8.58992 19.54 8.22992 19.54H6.0799C5.1999 19.54 4.47992 18.8199 4.47992 17.9399V15.79C4.47992 15.43 4.26992 14.92 4.00992 14.66L2.4899 13.14C1.8699 12.52 1.8699 11.5 2.4899 10.88L4.00992 9.35999C4.26992 9.09999 4.47992 8.58998 4.47992 8.22998V6.07996C4.47992 5.19996 5.1999 4.47998 6.0799 4.47998" stroke="#B2ABAB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -83,11 +88,11 @@ const SideNavigation = (): JSX.Element => {
                         </div>
 
                         <svg className="absolute right-0 h-0 transition-all duration-300 ease-in-out group-hover:h-auto" xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
-                            <path d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
                         </svg>
                     </Link>
 
-                    <Link className="px-8 flex items-center relative group" href="">
+                    <Link className="px-8 flex items-center relative group" href="" aria-label="Dashboard link">
                         <div className="mx-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 8V13" stroke="#B2ABAB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -97,12 +102,12 @@ const SideNavigation = (): JSX.Element => {
                         </div>
 
                         <svg className="absolute right-0 h-0 transition-all duration-300 ease-in-out group-hover:h-auto" xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
-                            <path d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
                         </svg>
                     </Link>
 
-                    <div className="p-2 bg-white rounded-[6.25rem] flex flex-col items-center gap-2 mx-auto">
-                        <button className="p-[0.46875rem] rounded-[5.875rem] bg-[#34caa5] flex flex-col justify-center items-center gap-[0.58594rem]" type="button" aria-label="Switch to light mood">
+                    <div className="p-2 bg-white rounded-[6.25rem] flex flex-col items-center gap-2 mx-auto dark:bg-slate-700">
+                        <button className={`p-[0.46875rem] rounded-[5.875rem]  flex flex-col justify-center items-center gap-[0.58594rem] hover:bg-[#34caa5] ${theme === "light" ? "bg-[#34caa5]" : "bg-transparent"}`} type="button" aria-label="Switch to light mood" onClick={() => toggleTheme("light")}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                 <g clipPath="url(#clip0_1826_464)">
                                     <path d="M9 13.2188C11.33 13.2188 13.2188 11.33 13.2188 9C13.2188 6.67005 11.33 4.78125 9 4.78125C6.67005 4.78125 4.78125 6.67005 4.78125 9C4.78125 11.33 6.67005 13.2188 9 13.2188Z" fill="white" />
@@ -123,7 +128,7 @@ const SideNavigation = (): JSX.Element => {
                             </svg>
                         </button>
 
-                        <button className="p-[0.46875rem] rounded-[5.875rem] bg-transparent flex flex-col justify-center items-center gap-[0.58594rem] transition-colors duration-300 ease-in-out hover:bg-[#34caa5] group" type="button" aria-label="Switch to dark mood">
+                        <button className={`p-[0.46875rem] rounded-[5.875rem] flex flex-col justify-center items-center gap-[0.58594rem] transition-colors duration-300 ease-in-out hover:bg-slate-900 ${theme === "dark" ? "bg-slate-900" : "bg-transparent"} group`} type="button" aria-label="Switch to dark mood" onClick={() => toggleTheme("dark")}>
                             <svg className="group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" width="16.875" height="16.875" viewBox="0 0 30 30" fill="none">
                                 <path className="group-hover:fill-white" d="M15 4.6875C15.2486 4.6875 15.4871 4.58873 15.6629 4.41291C15.8387 4.2371 15.9375 3.99864 15.9375 3.75V2.8125C15.9375 2.56386 15.8387 2.3254 15.6629 2.14959C15.4871 1.97377 15.2486 1.875 15 1.875C14.7514 1.875 14.5129 1.97377 14.3371 2.14959C14.1613 2.3254 14.0625 2.56386 14.0625 2.8125V3.75C14.0625 3.99864 14.1613 4.2371 14.3371 4.41291C14.5129 4.58873 14.7514 4.6875 15 4.6875Z" fill="#B2ABAB" />
                                 <path className="group-hover:fill-white" d="M15 25.3125C14.7514 25.3125 14.5129 25.4113 14.3371 25.5871C14.1613 25.7629 14.0625 26.0014 14.0625 26.25V27.1875C14.0625 27.4361 14.1613 27.6746 14.3371 27.8504C14.5129 28.0262 14.7514 28.125 15 28.125C15.2486 28.125 15.4871 28.0262 15.6629 27.8504C15.8387 27.6746 15.9375 27.4361 15.9375 27.1875V26.25C15.9375 26.0014 15.8387 25.7629 15.6629 25.5871C15.4871 25.4113 15.2486 25.3125 15 25.3125Z" fill="#B2ABAB" />
@@ -140,7 +145,7 @@ const SideNavigation = (): JSX.Element => {
                 </div>
 
                 <div className="flex flex-col gap-5">
-                    <Link className="px-8 flex items-center relative group" href="">
+                    <Link className="px-8 flex items-center relative group" href="" aria-label="Dashboard link">
                         <div className="mx-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M8.5 12H14.5" stroke="#B2ABAB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -150,11 +155,11 @@ const SideNavigation = (): JSX.Element => {
                         </div>
 
                         <svg className="absolute right-0 h-0 transition-all duration-300 ease-in-out group-hover:h-auto" xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
-                            <path d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
                         </svg>
                     </Link>
 
-                    <Link className="px-8 flex items-center relative group" href="">
+                    <Link className="px-8 flex items-center relative group" href="" aria-label="Dashboard link">
                         <div className="mx-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M15 12C15 10.34 13.66 9 12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C12.41 15 12.81 14.92 13.17 14.76" stroke="#B2ABAB" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
@@ -164,11 +169,11 @@ const SideNavigation = (): JSX.Element => {
                         </div>
 
                         <svg className="absolute right-0 h-0 transition-all duration-300 ease-in-out group-hover:h-auto" xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
-                            <path d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
                         </svg>
                     </Link>
 
-                    <Link className="px-8 flex items-center relative group" href="">
+                    <Link className="px-8 flex items-center relative group" href="" aria-label="Dashboard link">
                         <div className="mx-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M6.56 14.5599L4 11.9999L6.56 9.43994" stroke="#B2ABAB" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
@@ -180,7 +185,7 @@ const SideNavigation = (): JSX.Element => {
                         </div>
 
                         <svg className="absolute right-0 h-0 transition-all duration-300 ease-in-out group-hover:h-auto" xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
-                            <path d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
+                            <path className="dark:fill-slate-200" d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z" fill="#0D062D" />
                         </svg>
                     </Link>
                 </div>

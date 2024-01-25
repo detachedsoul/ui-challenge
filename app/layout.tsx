@@ -27,10 +27,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <link rel="icon" href="/favicon.jpg" />
+                <link rel="icon" href="/favicon.svg" />
             </head>
 
-            <body className={`${jakartaSans.className} text-base leading-[160%] antialiased text-balance scroll-smooth flex items-start`}>
+            <body className={`${jakartaSans.className} text-base leading-[160%] antialiased text-balance scroll-smooth flex items-start dark:bg-slate-900 dark:text-slate-400`}>
                 {children}
             </body>
         </html>

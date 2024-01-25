@@ -11,7 +11,7 @@ const Index = (): JSX.Element => {
             <div className="w-full min-h-screen">
                 <Header />
 
-                <main className="p-4 bg-[#fafafa] grid items-start lg:grid-cols-12 gap-4">
+                <main className="p-4 bg-[#fafafa] grid items-start lg:grid-cols-12 gap-4 dark:bg-slate-900 dark:text-slate-400">
                     <MainContent />
                     <ContentAside />
                 </main>
