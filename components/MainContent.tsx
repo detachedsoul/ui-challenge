@@ -106,6 +106,7 @@ const MainContent = (): JSX.Element => {
     };
 
     const options = {
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 display: false,
@@ -115,18 +116,14 @@ const MainContent = (): JSX.Element => {
             y: {
                 beginAtZero: true,
             },
-            x: {
-                beginAtZero: true,
-                maxRotation: 0,
-            },
         },
     };
 
     return (
 
-        <div className="grid gap-4 lg:col-span-7">
+        <div className="grid gap-4 lg:col-span-7 xl:gap-8">
             <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[1.06rem] dark:bg-slate-800 dark:border-slate-900">
-                <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center flex-wrap justify-between gap-4">
                     <h2 className="header">
                         Sales Trends
                     </h2>
@@ -175,7 +172,9 @@ const MainContent = (): JSX.Element => {
                     </div>
                 </div>
 
-                <Bar data={data} options={options} />
+                <div className="overflow-x-auto custom-scrollbar h-[250px]">
+                    <Bar data={data} options={options} />
+                </div>
             </div>
 
             <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[1.06rem] dark:bg-slate-800 dark:text-slate-200 dark:border-slate-900">
@@ -217,7 +216,7 @@ const MainContent = (): JSX.Element => {
 
                         <tbody>
                             {orders.map((order: ordersType): JSX.Element => (
-                                <tr className="first:pt-4 border-b border-[#edf2f6] last:border-b-0 dark:border-slate-700" key={order.id}>
+                                <tr className="first:pt-4 border-b border-[#edf2f6] last:border-b-0 dark:border-slate-700 even:bg-[#f5f5f5] hover:bg-[#f5f5f5] dark:even:bg-slate-700 dark:hover:bg-slate-700" key={order.id}>
                                     <td className="py-4 pr-4 inline-flex gap-[0.625rem] items-center leading-6 font-medium text-[#3a3f51] w-max dark:text-white">
                                         <Image src={order.customerImage} alt="" />
 

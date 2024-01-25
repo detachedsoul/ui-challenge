@@ -1,10 +1,8 @@
-import Image from "next/image";
-import UserImage from "@/assets/img/user-icon.svg";
-import { ChevronDownIcon } from "lucide-react";
+import UserActions from "@/components/UserActions";
 
-const MobileUserPreview = ({isActive}: {isActive: boolean}): JSX.Element => {
+const MobileUserPreview = ({ isActive }: { isActive: boolean; }): JSX.Element => {
     return (
-        <div className={`bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] absolute top-[calc(100%+1rem)] grid gap-6 w-[calc(100%-2rem)] transition-transform ease-in-out duration-300 ${isActive ? "translate-y-0" : "-translate-y-[300%]"} dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 lg:hidden`}>
+        <div className={`bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] absolute top-[calc(100%+1rem)] grid gap-6 w-[calc(100%-2rem)] transition-transform ease-in-out duration-300 ${isActive ? "translate-y-0" : "-translate-y-[300%]"} dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 md:w-1/2 md:left-1/4 lg:hidden`}>
             <div className="flex items-center justify-between gap-4">
                 <p className="flex items-center gap-2 font-bold text-[#26282c] text-sm leading-[1.375rem] dark:text-slate-200">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -24,25 +22,7 @@ const MobileUserPreview = ({isActive}: {isActive: boolean}): JSX.Element => {
                 </button>
             </div>
 
-            <div className="rounded-[1.75rem] border border-[#dadddd] py-1.5 px-2 flex items-center gap-3 justify-between dark:border-slate-700">
-                <div className="flex items-center gap-3">
-                    <Image src={UserImage} alt="Justin Bergson" />
-
-                    <div>
-                        <h4 className="text-[#26282c] dark:text-white">
-                            Justin Bergson
-                        </h4>
-
-                        <p className="text-[#787486] text-sm dark:text-slate-200">
-                            Justin@gmail.com
-                        </p>
-                    </div>
-                </div>
-
-                <button className="text-[#0d062d] dark:text-slate-200" type="button" aria-label="Toggle button">
-                    <ChevronDownIcon strokeWidth={1} />
-                </button>
-            </div>
+            <UserActions />
         </div>
     );
 };

@@ -1,6 +1,6 @@
 const MobileSearchBar = ({isActive}: {isActive: boolean}): JSX.Element => {
     return (
-        <div className={`bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] absolute top-[calc(100%+1rem)] w-[calc(100%-2rem)] transition-transform ease-in-out duration-300 ${isActive ? "translate-y-0" : "-translate-y-[300%]"} dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 lg:hidden`}>
+        <div className={`bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] absolute top-[calc(100%+1rem)] w-[calc(100%-2rem)] transition-transform ease-in-out duration-300 ${isActive ? "translate-y-0" : "-translate-y-[300%]"} dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 md:w-1/2 md:left-1/4 lg:hidden`}>
             <form className="flex items-center bg-white border border-[#dadddd] px-4 py-3 gap-2 rounded-3xl dark:bg-slate-700 dark:text-slate-200 dark:border-slate-600" method="get">
                 <button type="submit" aria-label="Search">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -8,7 +8,7 @@ const MobileSearchBar = ({isActive}: {isActive: boolean}): JSX.Element => {
                     </svg>
                 </button>
 
-                <input className="text-[#a3a3a3] leading-6 focus:outline-none focus:ring-0 focus:border-none bg-transparent w-full dark:text-slate-200 dark:placeholder:text-slate-200" type="search" name="search" id="search" placeholder="Search..." />
+                <input className="text-[#a3a3a3] leading-6 focus:outline-none focus:ring-0 focus:border-none bg-transparent w-full dark:text-slate-200 dark:placeholder:text-slate-200" type="search" name="mobileSearch" id="mobileSearch" placeholder="Search..." />
             </form>
         </div>
     );

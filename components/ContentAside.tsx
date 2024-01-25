@@ -38,16 +38,16 @@ const ContentAside = (): JSX.Element => {
         {
             id: 4,
             type: "XStore",
-            amount: "$1,200,000",
-            percentage: "+8%",
+            amount: "$91,000",
+            percentage: "+6%",
             color: "after:bg-[#ff4a55]",
             width: "after:w-1/4"
         },
     ];
 
     return (
-        <div className="grid gap-4 lg:col-span-5">
-            <div className="grid lg:grid-cols-2 gap-4">
+        <div className="grid gap-4 lg:col-span-5 xl:gap-8">
+            <div className="grid md:grid-cols-2 gap-4 xl:gap-8">
                 <div className="bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[0.625rem] dark:bg-slate-800 dark:border-slate-900">
                     <div className="flex items-center justify-between">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -246,7 +246,7 @@ const ContentAside = (): JSX.Element => {
                     </Link>
                 </div>
 
-                <div className="grid gap-5">
+                <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-1">
                     {platforms.map((platform: topPlatformType): JSX.Element => (
                         <div className="grid gap-[1.06rem]" key={platform.id}>
                             <h3 className="header text-[#22242c]">

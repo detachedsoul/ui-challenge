@@ -1,13 +1,11 @@
+import UserActions from "@/components/UserActions";
 import MobileHeader from "@/components/MobileHeader";
 import Link from "next/link";
-import Image from "next/image";
-import UserImage from "@/assets/img/user-icon.svg";
-import { ChevronDownIcon } from "lucide-react";
 
 const Header = (): JSX.Element => {
     return (
-        <header className="bg-[#fafafa]/80 backdrop-blur border-b border-[#e5eaef] p-[1.125rem] flex items-center gap-4 justify-between sticky top-0 z-50 dark:bg-slate-900/80 dark:border-slate-800 dark:text-slate-200">
-            <Link className="text-xl font-semibold leading-7 text-[#26282c] dark:text-slate-200" href="">
+        <header className="bg-[#fafafa]/80 backdrop-blur border-b border-[#e5eaef] p-[1.125rem] flex items-center gap-4 justify-between sticky top-0 z-50 dark:bg-slate-900/80 dark:border-slate-800 dark:text-slate-200 xl:px-8">
+            <Link className="text-xl font-semibold leading-7 text-[#26282c] dark:text-slate-200" href="" aria-label="GeegPay UI Challenge">
                 <svg className="lg:hidden" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <path fillRule="evenodd" clipRule="evenodd" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95429 0 0 8.95431 0 20C0 31.0457 8.95429 40 20 40ZM26.2393 9.31684C26.543 8.23805 25.4961 7.60013 24.54 8.2813L11.1931 17.7896C10.1562 18.5283 10.3193 20 11.4381 20H14.9527V19.9728H21.8025L16.2212 21.9421L13.7607 30.6832C13.457 31.762 14.5038 32.3999 15.46 31.7187L28.8069 22.2105C29.8438 21.4718 29.6806 20 28.5619 20H23.2321L26.2393 9.31684Z" fill="#34CAA5" />
                 </svg>
@@ -48,23 +46,7 @@ const Header = (): JSX.Element => {
                         </svg>
                     </button>
 
-                    <div className="rounded-[1.75rem] border border-[#dadddd] py-1.5 px-2 flex items-center gap-3 justify-between dark:border-slate-700">
-                        <Image src={UserImage} alt="Justin Bergson" />
-
-                        <div>
-                            <h4 className="text-[#26282c] dark:text-white">
-                                Justin Bergson
-                            </h4>
-
-                            <p className="text-[#787486] text-sm dark:text-slate-200">
-                                Justin@gmail.com
-                            </p>
-                        </div>
-
-                        <button className="text-[#0d062d] dark:text-slate-200" type="button" aria-label="Toggle button">
-                            <ChevronDownIcon strokeWidth={1} />
-                        </button>
-                    </div>
+                    <UserActions />
                 </div>
             </div>
         </header>

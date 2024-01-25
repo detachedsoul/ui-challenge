@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const MobileNavBar = ({isActive}: {isActive: boolean}): JSX.Element => {
     return (
-        <nav className={`absolute bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[1.06rem] w-[calc(100%-2rem)] top-[calc(100%+1rem)] overflow-y-auto h-[calc(100vh-((1.125rem*2)+10rem))] bottom-4 custom-scrollbar transition-transform ease-in-out duration-300 ${isActive ? "translate-y-0" : "-translate-y-[300%]"} dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 lg:hidden`}>
+        <nav className={`absolute bg-white p-4 rounded-[0.875rem] border border-[#edf2f7] grid gap-[1.06rem] w-[calc(100%-2rem)] top-[calc(100%+1rem)] overflow-y-auto h-[calc(100vh-((1.125rem*2)+10rem))] bottom-4 custom-scrollbar transition-transform ease-in-out duration-300 ${isActive ? "translate-y-0" : "-translate-y-[300%]"} dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 md:w-2/6 md:right-4 lg:hidden`}>
             <ul className="grid gap-5">
                 <li>
                     <Link className="flex items-center gap-2 p-4 rounded-[0.875rem] hover:bg-[rgba(52,_202,_165,_0.10)] relative group" href="">

@@ -30,7 +30,7 @@ export default function RootLayout({
                 <link rel="icon" href="/favicon.svg" />
             </head>
 
-            <body className={`${jakartaSans.className} text-base leading-[160%] antialiased text-balance scroll-smooth flex items-start dark:bg-slate-900 dark:text-slate-400`}>
+            <body className={`${jakartaSans.className} text-base leading-[160%] antialiased text-balance scroll-smooth flex items-start overflow-x-hidden dark:bg-slate-900 dark:text-slate-400`}>
                 {children}
             </body>
         </html>
