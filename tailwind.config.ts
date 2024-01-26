@@ -13,21 +13,17 @@ const config: Config = {
                 "fadeIn": {
                     from: {
                         "opacity": "0",
-                        "display": "none",
                     },
                     to: {
                         "opacity": "1",
-                        "display": "grid",
                     },
                 },
                 "fadeOut": {
                     from: {
                         "opacity": "1",
-                        "display": "grid",
                     },
                     to: {
                         "opacity": "0",
-                        "display": "none",
                     },
                 },
             },

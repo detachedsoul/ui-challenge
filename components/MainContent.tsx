@@ -144,7 +144,7 @@ const MainContent = (): JSX.Element => {
 
                         </button>
 
-                        <div className={`bg-white rounded-[0.875rem] border border-[#edf2f7] absolute top-[calc(100%+1rem)] text-xs leading-4 text-[#3a3f51] w-full transition-all duration-500 ease-in-out dark:text-slate-white dark:bg-slate-700 dark:border-slate-700 ${trendsFilterIsActive ? "animate-fadeIn" : "animate-fadeOut"}`}>
+                        <div className={`bg-white rounded-[0.875rem] border border-[#edf2f7] absolute top-[calc(100%+1rem)] text-xs leading-4 text-[#3a3f51] w-full transition-all duration-500 ease-in-out dark:text-slate-white dark:bg-slate-700 dark:border-slate-700 ${trendsFilterIsActive ? "animate-fadeIn grid" : "animate-fadeOut hidden"}`}>
                             <button className="transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa] p-3 text-left rounded-t-[0.875rem] w-full dark:hover:bg-slate-800 dark:text-white" type="button" onClick={() => setSelectedTrend(() => {
                                 setTrendsFilterIsActive(false);
 

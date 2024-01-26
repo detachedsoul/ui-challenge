@@ -33,16 +33,16 @@ const UserActions = (): JSX.Element => {
                 )}
             </button>
 
-            <div className={`bg-white rounded-[0.875rem] border border-[#edf2f7] absolute top-[calc(100%+1rem)] text-xs leading-4 text-[#3a3f51] w-full left-0 transition-all duration-500 ease-in-out dark:text-slate-white dark:bg-slate-700 dark:border-slate-700 ${profilePopUpIsActive ? "animate-fadeIn" : "animate-fadeOut"}`}>
-                <Link className="transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa] p-3 text-left rounded-t-[0.875rem] w-full dark:hover:bg-slate-800 dark:text-white block" href="">
+            <div className={`bg-white rounded-[0.875rem] border border-[#edf2f7] absolute top-[calc(100%+1rem)] text-xs leading-4 text-[#3a3f51] w-full left-0 transition-all duration-500 ease-in-out dark:text-slate-white dark:bg-slate-700 dark:border-slate-700 ${profilePopUpIsActive ? "animate-fadeIn grid" : "animate-fadeOut hidden"}`}>
+                <Link className="transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa] p-4 text-left rounded-t-[0.875rem] w-full dark:hover:bg-slate-800 dark:text-white block" href="">
                     Profile
                 </Link>
 
-                <Link className="transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa] p-3 text-left w-full dark:hover:bg-slate-800 dark:text-white block" href="">
+                <Link className="transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa] p-4 text-left w-full dark:hover:bg-slate-800 dark:text-white block" href="">
                     Settings
                 </Link>
 
-                <Link className="transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa] p-3 text-left rounded-b-[0.875rem] w-full dark:hover:bg-slate-800 dark:text-white block" href="">
+                <Link className="transition-colors duration-300 ease-in-out hover:bg-[#f7f8fa] p-4 text-left rounded-b-[0.875rem] w-full dark:hover:bg-slate-800 dark:text-white block" href="">
                     Logout
                 </Link>
             </div>
