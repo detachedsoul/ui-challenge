@@ -107,7 +107,7 @@ const SideNavigation = (): JSX.Element => {
                     </Link>
 
                     <div className="p-2 bg-white rounded-[6.25rem] flex flex-col items-center gap-2 mx-auto dark:bg-slate-700">
-                        <button className={`p-[0.46875rem] rounded-[5.875rem]  flex flex-col justify-center items-center gap-[0.58594rem] hover:bg-[#34caa5] ${theme === "light" ? "bg-[#34caa5]" : "bg-transparent"}`} type="button" aria-label="Switch to light mood" onClick={() => toggleTheme("light")}>
+                        <button className={`p-[0.46875rem] rounded-[5.875rem]  flex flex-col justify-center items-center gap-[0.58594rem] hover:bg-[#34caa5] ${theme === "light" ? "bg-[#34caa5]" : "bg-transparent"}`} type="button" aria-label="Switch to light mode" onClick={() => toggleTheme("light")}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                 <g clipPath="url(#clip0_1826_464)">
                                     <path d="M9 13.2188C11.33 13.2188 13.2188 11.33 13.2188 9C13.2188 6.67005 11.33 4.78125 9 4.78125C6.67005 4.78125 4.78125 6.67005 4.78125 9C4.78125 11.33 6.67005 13.2188 9 13.2188Z" fill="white" />
@@ -128,7 +128,7 @@ const SideNavigation = (): JSX.Element => {
                             </svg>
                         </button>
 
-                        <button className={`p-[0.46875rem] rounded-[5.875rem] flex flex-col justify-center items-center gap-[0.58594rem] transition-colors duration-300 ease-in-out hover:bg-slate-900 ${theme === "dark" ? "bg-slate-900" : "bg-transparent"} group`} type="button" aria-label="Switch to dark mood" onClick={() => toggleTheme("dark")}>
+                        <button className={`p-[0.46875rem] rounded-[5.875rem] flex flex-col justify-center items-center gap-[0.58594rem] transition-colors duration-300 ease-in-out hover:bg-slate-900 ${theme === "dark" ? "bg-slate-900" : "bg-transparent"} group`} type="button" aria-label="Switch to dark mode" onClick={() => toggleTheme("dark")}>
                             <svg className="group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" width="16.875" height="16.875" viewBox="0 0 30 30" fill="none">
                                 <path className="group-hover:fill-white" d="M15 4.6875C15.2486 4.6875 15.4871 4.58873 15.6629 4.41291C15.8387 4.2371 15.9375 3.99864 15.9375 3.75V2.8125C15.9375 2.56386 15.8387 2.3254 15.6629 2.14959C15.4871 1.97377 15.2486 1.875 15 1.875C14.7514 1.875 14.5129 1.97377 14.3371 2.14959C14.1613 2.3254 14.0625 2.56386 14.0625 2.8125V3.75C14.0625 3.99864 14.1613 4.2371 14.3371 4.41291C14.5129 4.58873 14.7514 4.6875 15 4.6875Z" fill="#B2ABAB" />
                                 <path className="group-hover:fill-white" d="M15 25.3125C14.7514 25.3125 14.5129 25.4113 14.3371 25.5871C14.1613 25.7629 14.0625 26.0014 14.0625 26.25V27.1875C14.0625 27.4361 14.1613 27.6746 14.3371 27.8504C14.5129 28.0262 14.7514 28.125 15 28.125C15.2486 28.125 15.4871 28.0262 15.6629 27.8504C15.8387 27.6746 15.9375 27.4361 15.9375 27.1875V26.25C15.9375 26.0014 15.8387 25.7629 15.6629 25.5871C15.4871 25.4113 15.2486 25.3125 15 25.3125Z" fill="#B2ABAB" />

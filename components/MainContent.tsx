@@ -40,6 +40,7 @@ const generateRandomData = (numPoints: number, min: number, max: number) => {
 
 const MainContent = (): JSX.Element => {
     const [isActive, setIsActive] = useState<boolean>(false);
+    const [status, setStatus] = useState<number>(0);
     const [ref, setRef] = useState<string>("");
     const [name, setName] = useState<string>("");
     const [amount, setAmount] = useState<string>("");
@@ -247,6 +248,7 @@ const MainContent = (): JSX.Element => {
                                                 setAmount(order.amount);
                                                 setName(order.customerName);
                                                 setRef(order.id);
+                                                setStatus(order.status);
                                             }}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                     <path className="dark:fill-white" d="M6 11.8334C5.93333 11.8334 5.87333 11.82 5.80667 11.7934C5.62 11.72 5.5 11.5334 5.5 11.3334V7.33337C5.5 7.06004 5.72667 6.83337 6 6.83337C6.27333 6.83337 6.5 7.06004 6.5 7.33337V10.1267L6.98 9.64671C7.17333 9.45337 7.49333 9.45337 7.68667 9.64671C7.88 9.84004 7.88 10.16 7.68667 10.3534L6.35333 11.6867C6.26 11.78 6.12667 11.8334 6 11.8334Z" fill="#292D32" />
@@ -266,7 +268,7 @@ const MainContent = (): JSX.Element => {
                 </div>
             </div>
 
-            <Receipt isActive={isActive} setIsActive={setIsActive} amount={amount} name={name} id={ref} />
+            <Receipt isActive={isActive} setIsActive={setIsActive} amount={amount} name={name} id={ref} status={status} />
         </>
     );
 };

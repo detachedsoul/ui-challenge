@@ -8,8 +8,9 @@ const Receipt = ({
     setIsActive,
     id,
     name,
+    status,
     amount
-}: { isActive: boolean, setIsActive: Dispatch<SetStateAction<boolean>>, amount: string, id: string, name: string}) => {
+}: { isActive: boolean, setIsActive: Dispatch<SetStateAction<boolean>>, amount: string, id: string, name: string, status: number}) => {
     useEffect(() => {
         isActive ? document.querySelector("body")!.style!.overflow = "hidden" : document.querySelector("body")!.style!.overflow = "auto";
     }, [isActive]);
@@ -72,7 +73,7 @@ const Receipt = ({
                                 Ref number
                             </p>
 
-                            <p className="text-white">
+                            <p className="dark:text-white">
                                 {id}
                             </p>
                         </div>
@@ -82,7 +83,7 @@ const Receipt = ({
                                 Merchant name
                             </p>
 
-                            <p className="text-white">
+                            <p className="dark:text-white">
                                 {name}
                             </p>
                         </div>
@@ -92,8 +93,28 @@ const Receipt = ({
                                 Payment method
                             </p>
 
-                            <p className="text-white">
+                            <p className="dark:text-white">
                                 Bank transfer
+                            </p>
+                        </div>
+
+                        <div className="flex justify-between gap-2 items-center">
+                            <p>
+                                Transaction type
+                            </p>
+
+                            <p className={`${status === 1 ? 'text-[#41d195]' : 'text-[#ed544e]'}`}>
+                                {status === 1 ? 'Credit' : 'Debit' }
+                            </p>
+                        </div>
+
+                        <div className="flex justify-between gap-2 items-center">
+                            <p>
+                                Transaction status
+                            </p>
+
+                            <p className={`${status === 1 ? 'text-[#41d195]' : 'text-[#ed544e]'}`}>
+                                {status === 1 ? 'Paid' : 'Refund' }
                             </p>
                         </div>
 
@@ -102,7 +123,7 @@ const Receipt = ({
                                 Payment time
                             </p>
 
-                            <p className="text-white">
+                            <p className="dark:text-white">
                                 Jan 26, 2024
                             </p>
                         </div>
